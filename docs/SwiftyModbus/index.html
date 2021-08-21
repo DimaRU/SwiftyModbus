@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftyModbus - SwiftyModbus</title>
+    <link rel="stylesheet" type="text/css" href="./all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href=".">
+            <strong>
+                SwiftyModbus
+            </strong>
+            <span>Documentation</span>
+        </a>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Nested Types</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#swiftymodbus.init(address:port:)">init(address:​port:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#swiftymodbus.debugmode">debug​Mode</a></li><li class="variable"><a href="#swiftymodbus.responsetimeout">response​Timeout</a></li><li class="variable"><a href="#swiftymodbus.getbytetimeout">get​Byte​Timeout</a></li><li class="variable"><a href="#swiftymodbus.headerlength">header​Length</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#swiftymodbus.setslave(_:)">set​Slave(_:​)</a></li><li class="function"><a href="#swiftymodbus.connect()">connect()</a></li><li class="function"><a href="#swiftymodbus.disconnect()">disconnect()</a></li><li class="function"><a href="#swiftymodbus.setsocket(socket:)">set​Socket(socket:​)</a></li><li class="function"><a href="#swiftymodbus.getsocket()">get​Socket()</a></li><li class="function"><a href="#swiftymodbus.flush()">flush()</a></li><li class="function"><a href="#swiftymodbus.readbits(addr:count:)">read​Bits(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readinputbits(addr:count:)">read​Input​Bits(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readregister(addr:)">read​Register(addr:​)</a></li><li class="function"><a href="#swiftymodbus.readregisters(addr:count:)">read​Registers(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readinputregisters(addr:count:)">read​Input​Registers(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.writebit(addr:status:)">write​Bit(addr:​status:​)</a></li><li class="function"><a href="#swiftymodbus.writebits(addr:status:)">write​Bits(addr:​status:​)</a></li><li class="function"><a href="#swiftymodbus.writeregister(addr:value:)">write​Register(addr:​value:​)</a></li><li class="function"><a href="#swiftymodbus.writeregisters(addr:data:)">write​Registers(addr:​data:​)</a></li><li class="function"><a href="#swiftymodbus.maskwriteregister(addr:maskand:maskor:)">mask​Write​Register(addr:​mask​AND:​mask​OR:​)</a></li><li class="function"><a href="#swiftymodbus.writeandreadregisters(writeaddr:data:readaddr:readcount:)">write​And​Read​Registers(write​Addr:​data:​read​Addr:​read​Count:​)</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Class</small>
+    <code class="name">Swifty​Modbus</code>
+</h1>
+
+<div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">class</span> <span class="type">SwiftyModbus</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Libmodbus wrapper class with Promises</p>
+
+</div>
+<section id="relationships">
+    <h2 hidden>Relationships</h2>
+        
+        <h3>Nested Types</h3>
+<dl>
+    <dt class="enumeration"><code><a href="./SwiftyModbus_ModbusError">SwiftyModbus.ModbusError</a></code></dt>
+<dd><p>libmodbus error</p>
+</dd>
+</dl>
+</section>
+    <section id="initializers">
+        <h2>Initializers</h2>
+
+        <div role="article" class="initializer" id="swiftymodbus.init(address:port:)">
+    <h3>
+        <code><a href="#swiftymodbus.init(address:port:)">init(address:​port:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">init</span>(<span class="variable">address</span>: <span class="type">String</span>, <span class="variable">port</span>: <span class="type">Int32</span>)  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Create a SwiftyModbus class for TCP Protocol</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>address</th>
+    <td><code class="type">String</code></td>
+    <td><p>IP address or host name</p>
+</td>
+</tr>
+<tr>
+    <th>port</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>port number to connect to</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+    </section>
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="swiftymodbus.debugmode">
+    <h3>
+        <code><a href="#swiftymodbus.debugmode">debug​Mode</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">debugMode</span> = <span class="keyword">false</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Set debug flag of the context. When true, many verbose messages are displayed on stdout and stderr.</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="swiftymodbus.responsetimeout">
+    <h3>
+        <code><a href="#swiftymodbus.responsetimeout">response​Timeout</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">responseTimeout</span>: <span class="type">TimeInterval</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Get/set the timeout TimeInterval used to wait for a response and connect</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="swiftymodbus.getbytetimeout">
+    <h3>
+        <code><a href="#swiftymodbus.getbytetimeout">get​Byte​Timeout</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">getByteTimeout</span>: <span class="type">TimeInterval</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Get/set the timeout interval between two consecutive bytes of the same message</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="swiftymodbus.headerlength">
+    <h3>
+        <code><a href="#swiftymodbus.headerlength">header​Length</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">headerLength</span>: <span class="type">Int32</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Retrieve the current header length</p>
+
+</div>
+  <h4>Returns</h4>
+  <p>header length from the backend</p>
+
+</div>
+    </section>
+    <section id="methods">
+        <h2>Methods</h2>
+
+        <div role="article" class="function" id="swiftymodbus.setslave(_:)">
+    <h3>
+        <code><a href="#swiftymodbus.setslave(_:)">set​Slave(_:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setSlave</span>(<span class="keyword">_</span> <span class="variable">slave</span>: <span class="type">Int32</span>)  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Set the slave number</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>slave</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>slave number (from 1 to 247) or 0xFF (MODBUS_TCP_SLAVE)</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="swiftymodbus.connect()">
+    <h3>
+        <code><a href="#swiftymodbus.connect()">connect()</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">connect</span>() -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Establish a connection to a Modbus server</p>
+
+</div>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.disconnect()">
+    <h3>
+        <code><a href="#swiftymodbus.disconnect()">disconnect()</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">disconnect</span>() -&gt; <span class="type">Guarantee</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Close the connection established</p>
+
+</div>
+  <h4>Returns</h4>
+  <p>Guarantee<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.setsocket(socket:)">
+    <h3>
+        <code><a href="#swiftymodbus.setsocket(socket:)">set​Socket(socket:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setSocket</span>(<span class="variable">socket</span>: <span class="type">Int32</span>)  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Set socket of the modbus context</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>socket</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>socket handle</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="swiftymodbus.getsocket()">
+    <h3>
+        <code><a href="#swiftymodbus.getsocket()">get​Socket()</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">getSocket</span>() -&gt; <span class="type">Int32</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Get socket of the modbus context</p>
+
+</div>
+  <h4>Returns</h4>
+  <p>socket handle</p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.flush()">
+    <h3>
+        <code><a href="#swiftymodbus.flush()">flush()</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">flush</span>() -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Flush non-transmitted data and discard data received but not read</p>
+
+</div>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.readbits(addr:count:)">
+    <h3>
+        <code><a href="#swiftymodbus.readbits(addr:count:)">read​Bits(addr:​count:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">readBits</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">count</span>: <span class="type">Int32</span>) -&gt; <span class="type">Promise</span>&lt;[<span class="type">UInt8</span>]&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Read the status of the bits (coils) to the address of the remote device.
+The function uses the Modbus function code 0x01 (read coil status).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>count</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>count of the bits (coils)</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise with array of unsigned bytes (8 bits) set to TRUE(1) or FALSE(0).</p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.readinputbits(addr:count:)">
+    <h3>
+        <code><a href="#swiftymodbus.readinputbits(addr:count:)">read​Input​Bits(addr:​count:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">readInputBits</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">count</span>: <span class="type">Int32</span>) -&gt; <span class="type">Promise</span>&lt;[<span class="type">UInt8</span>]&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Read the status of the input bits to the address of the remote device.
+The function uses the Modbus function code 0x02 (read input status).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>count</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>count of the input bits</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise with array of unsigned bytes (8 bits) set to TRUE(1) or FALSE(0).</p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.readregister(addr:)">
+    <h3>
+        <code><a href="#swiftymodbus.readregister(addr:)">read​Register(addr:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">readRegister</span>(<span class="variable">addr</span>: <span class="type">Int32</span>) -&gt; <span class="type">Promise</span>&lt;<span class="type">UInt16</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Read the content of the one holding register by address of the remote device.
+The function uses the Modbus function code 0x03 (read holding registers).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise with register value as UInt16</p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.readregisters(addr:count:)">
+    <h3>
+        <code><a href="#swiftymodbus.readregisters(addr:count:)">read​Registers(addr:​count:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">readRegisters</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">count</span>: <span class="type">Int32</span>) -&gt; <span class="type">Promise</span>&lt;[<span class="type">UInt16</span>]&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Read the content of the holding registers to the address of the remote device.
+The function uses the Modbus function code 0x03 (read holding registers).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>count</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>count of the holding registers</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise with array as unsigned word values (16 bits).</p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.readinputregisters(addr:count:)">
+    <h3>
+        <code><a href="#swiftymodbus.readinputregisters(addr:count:)">read​Input​Registers(addr:​count:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">readInputRegisters</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">count</span>: <span class="type">Int32</span>) -&gt; <span class="type">Promise</span>&lt;[<span class="type">UInt16</span>]&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Read the content of the input registers to the address of the remote device.
+The function uses the Modbus function code 0x04 (read input registers).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>count</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>count of the input registers</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise with array as unsigned word values (16 bits).</p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.writebit(addr:status:)">
+    <h3>
+        <code><a href="#swiftymodbus.writebit(addr:status:)">write​Bit(addr:​status:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">writeBit</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">status</span>: <span class="type">Bool</span>) -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Write the status at the address of the remote device.
+The function uses the Modbus function code 0x05 (force single coil).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>status</th>
+    <td><code class="type">Bool</code></td>
+    <td><p>boolean status to write</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.writebits(addr:status:)">
+    <h3>
+        <code><a href="#swiftymodbus.writebits(addr:status:)">write​Bits(addr:​status:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">writeBits</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">status</span>: [<span class="type">UInt8</span>]) -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Write the status of the bits (coils) at the address of the remote device.
+The function uses the Modbus function code 0x0F (force multiple coils).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>status</th>
+    <td><code class="type">[UInt8]</code></td>
+    <td><p>array of statuses</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.writeregister(addr:value:)">
+    <h3>
+        <code><a href="#swiftymodbus.writeregister(addr:value:)">write​Register(addr:​value:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">writeRegister</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">value</span>: <span class="type">UInt16</span>) -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Write the value to the holding register at the address of the remote device.
+The function uses the Modbus function code 0x06 (preset single register).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>value</th>
+    <td><code class="type">UInt16</code></td>
+    <td><p>value of holding register</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.writeregisters(addr:data:)">
+    <h3>
+        <code><a href="#swiftymodbus.writeregisters(addr:data:)">write​Registers(addr:​data:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">writeRegisters</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">data</span>: [<span class="type">UInt16</span>]) -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Write to holding registers at address of the remote device.
+The function uses the Modbus function code 0x10 (preset multiple registers).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>data</th>
+    <td><code class="type">[UInt16]</code></td>
+    <td><p>array of values to be writteb</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.maskwriteregister(addr:maskand:maskor:)">
+    <h3>
+        <code><a href="#swiftymodbus.maskwriteregister(addr:maskand:maskor:)">mask​Write​Register(addr:​mask​AND:​mask​OR:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">maskWriteRegister</span>(<span class="variable">addr</span>: <span class="type">Int32</span>, <span class="variable">maskAND</span>: <span class="type">UInt16</span>, <span class="variable">maskOR</span>: <span class="type">UInt16</span>) -&gt; <span class="type">Promise</span>&lt;<span class="type">Void</span>&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Modify the value of the holding register at the remote device using the algorithm:
+new value = (current value AND 'and') OR ('or' AND (NOT 'and'))
+The function uses the Modbus function code 0x16 (mask single register).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device</p>
+</td>
+</tr>
+<tr>
+    <th>mask​AND</th>
+    <td><code class="type">UInt16</code></td>
+    <td><p>and mask</p>
+</td>
+</tr>
+<tr>
+    <th>mask​OR</th>
+    <td><code class="type">UInt16</code></td>
+    <td><p>or mask</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise<Void></p>
+
+</div>
+<div role="article" class="function" id="swiftymodbus.writeandreadregisters(writeaddr:data:readaddr:readcount:)">
+    <h3>
+        <code><a href="#swiftymodbus.writeandreadregisters(writeaddr:data:readaddr:readcount:)">write​And​Read​Registers(write​Addr:​data:​read​Addr:​read​Count:​)</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">writeAndReadRegisters</span>(<span class="variable">writeAddr</span>: <span class="type">Int32</span>, <span class="variable">data</span>: [<span class="type">UInt16</span>], <span class="variable">readAddr</span>: <span class="type">Int32</span>, <span class="variable">readCount</span>: <span class="type">Int32</span>) -&gt; <span class="type">Promise</span>&lt;[<span class="type">UInt16</span>]&gt;  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>Write and read number of registers in a single transaction</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>write​Addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device to write</p>
+</td>
+</tr>
+<tr>
+    <th>data</th>
+    <td><code class="type">[UInt16]</code></td>
+    <td><p>data array to write</p>
+</td>
+</tr>
+<tr>
+    <th>read​Addr</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>address of the remote device to read</p>
+</td>
+</tr>
+<tr>
+    <th>read​Count</th>
+    <td><code class="type">Int32</code></td>
+    <td><p>count of read data</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Returns</h4>
+  <p>Promise with array as unsigned word values (16 bits).</p>
+
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2021-08-21T15:51:07+0300">August 21, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+</p>
+    </footer>
+</body>
+</html>
