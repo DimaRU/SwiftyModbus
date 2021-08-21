@@ -1,0 +1,6 @@
+module CModbus [system] {
+    link "modbus"
+    umbrella header "libmodbus.h"
+    export *
+    module * { export * }
+}
