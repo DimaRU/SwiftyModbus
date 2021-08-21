@@ -25,7 +25,7 @@
     <nav>
         <div class="wrapper">
             <h2>On This Page</h2>
-            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Nested Types</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#swiftymodbus.init(address:port:)">init(address:​port:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#swiftymodbus.debugmode">debug​Mode</a></li><li class="variable"><a href="#swiftymodbus.responsetimeout">response​Timeout</a></li><li class="variable"><a href="#swiftymodbus.getbytetimeout">get​Byte​Timeout</a></li><li class="variable"><a href="#swiftymodbus.headerlength">header​Length</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#swiftymodbus.setslave(_:)">set​Slave(_:​)</a></li><li class="function"><a href="#swiftymodbus.connect()">connect()</a></li><li class="function"><a href="#swiftymodbus.disconnect()">disconnect()</a></li><li class="function"><a href="#swiftymodbus.setsocket(socket:)">set​Socket(socket:​)</a></li><li class="function"><a href="#swiftymodbus.getsocket()">get​Socket()</a></li><li class="function"><a href="#swiftymodbus.flush()">flush()</a></li><li class="function"><a href="#swiftymodbus.readbits(addr:count:)">read​Bits(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readinputbits(addr:count:)">read​Input​Bits(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readregister(addr:)">read​Register(addr:​)</a></li><li class="function"><a href="#swiftymodbus.readregisters(addr:count:)">read​Registers(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readinputregisters(addr:count:)">read​Input​Registers(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.writebit(addr:status:)">write​Bit(addr:​status:​)</a></li><li class="function"><a href="#swiftymodbus.writebits(addr:status:)">write​Bits(addr:​status:​)</a></li><li class="function"><a href="#swiftymodbus.writeregister(addr:value:)">write​Register(addr:​value:​)</a></li><li class="function"><a href="#swiftymodbus.writeregisters(addr:data:)">write​Registers(addr:​data:​)</a></li><li class="function"><a href="#swiftymodbus.maskwriteregister(addr:maskand:maskor:)">mask​Write​Register(addr:​mask​AND:​mask​OR:​)</a></li><li class="function"><a href="#swiftymodbus.writeandreadregisters(writeaddr:data:readaddr:readcount:)">write​And​Read​Registers(write​Addr:​data:​read​Addr:​read​Count:​)</a></li></ul></li></ol>
+            <ol><li><a href="#relationships">Relationships</a><ul><li><a href="#relationships">Nested Types</a></li></ul></li><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#swiftymodbus.init(address:port:)">init(address:​port:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#swiftymodbus.modbusqueue">modbus​Queue</a></li><li class="variable"><a href="#swiftymodbus.debugmode">debug​Mode</a></li><li class="variable"><a href="#swiftymodbus.responsetimeout">response​Timeout</a></li><li class="variable"><a href="#swiftymodbus.getbytetimeout">get​Byte​Timeout</a></li><li class="variable"><a href="#swiftymodbus.headerlength">header​Length</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#swiftymodbus.setslave(_:)">set​Slave(_:​)</a></li><li class="function"><a href="#swiftymodbus.connect()">connect()</a></li><li class="function"><a href="#swiftymodbus.disconnect()">disconnect()</a></li><li class="function"><a href="#swiftymodbus.setsocket(socket:)">set​Socket(socket:​)</a></li><li class="function"><a href="#swiftymodbus.getsocket()">get​Socket()</a></li><li class="function"><a href="#swiftymodbus.flush()">flush()</a></li><li class="function"><a href="#swiftymodbus.readbits(addr:count:)">read​Bits(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readinputbits(addr:count:)">read​Input​Bits(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readregister(addr:)">read​Register(addr:​)</a></li><li class="function"><a href="#swiftymodbus.readregisters(addr:count:)">read​Registers(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.readinputregisters(addr:count:)">read​Input​Registers(addr:​count:​)</a></li><li class="function"><a href="#swiftymodbus.writebit(addr:status:)">write​Bit(addr:​status:​)</a></li><li class="function"><a href="#swiftymodbus.writebits(addr:status:)">write​Bits(addr:​status:​)</a></li><li class="function"><a href="#swiftymodbus.writeregister(addr:value:)">write​Register(addr:​value:​)</a></li><li class="function"><a href="#swiftymodbus.writeregisters(addr:data:)">write​Registers(addr:​data:​)</a></li><li class="function"><a href="#swiftymodbus.maskwriteregister(addr:maskand:maskor:)">mask​Write​Register(addr:​mask​AND:​mask​OR:​)</a></li><li class="function"><a href="#swiftymodbus.writeandreadregisters(writeaddr:data:readaddr:readcount:)">write​And​Read​Registers(write​Addr:​data:​read​Addr:​read​Count:​)</a></li></ul></li></ol>
         </div>
     </nav>
 
@@ -97,7 +97,19 @@
     <section id="properties">
         <h2>Properties</h2>
 
-        <div role="article" class="variable" id="swiftymodbus.debugmode">
+        <div role="article" class="variable" id="swiftymodbus.modbusqueue">
+    <h3>
+        <code><a href="#swiftymodbus.modbusqueue">modbus​Queue</a></code>
+    </h3>
+    <div class="declaration">
+<pre class="highlight"><code><html><body><span class="keyword">public</span> <span class="keyword">var</span> <span class="variable">modbusQueue</span>  </body></html></code></pre>
+</div>
+<div class="summary" role="doc-abstract">
+    <p>DispatchQueue for modbus acync opetations</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="swiftymodbus.debugmode">
     <h3>
         <code><a href="#swiftymodbus.debugmode">debug​Mode</a></code>
     </h3>
@@ -746,7 +758,7 @@ The function uses the Modbus function code 0x16 (mask single register).</p>
 
     <footer>
         <p>
-    Generated on <time datetime="2021-08-21T15:51:07+0300">August 21, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
+    Generated on <time datetime="2021-08-21T16:09:53+0300">August 21, 2021</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-rc.1</span>.
 </p>
     </footer>
 </body>

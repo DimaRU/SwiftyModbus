@@ -18,8 +18,10 @@ public class SwiftyModbus {
         case error(message: String, errno: Int32)
     }
     
+    /// DispatchQueue for modbus acync opetations
+    public var modbusQueue = DispatchQueue(label: "in.ioshack.modbusQueue")
+    
     private var modbus: OpaquePointer
-    private var modbusQueue = DispatchQueue(label: "in.ioshack.modbusQueue")
 
     
     /// Create a SwiftyModbus class for TCP Protocol
