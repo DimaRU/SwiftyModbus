@@ -105,7 +105,7 @@ public class SwiftyModbus {
     }
     
     /// Get/set the timeout interval between two consecutive bytes of the same message
-    public var getByteTimeout: TimeInterval {
+    public var byteTimeout: TimeInterval {
         get {
             var sec: UInt32 = 0
             var usec: UInt32 = 0
@@ -392,13 +392,13 @@ public class SwiftyModbus {
     }
 
     private func toTimerInterval(sec: UInt32, usec: UInt32) -> TimeInterval {
-        return (Double(sec) + Double(usec) / 1_000_000_000)
+        return (Double(sec) + Double(usec) / 1_000_000)
     }
 
     private func toSecUSec(timeInterval: TimeInterval ) -> (sec: UInt32, usec: UInt32) {
         let (whole, fraction) = modf(timeInterval)
         let sec = UInt32(whole)
-        let usec = UInt32(fraction * 1_000_000_000)
+        let usec = UInt32(fraction * 1_000_000)
         return (sec, usec)
     }
 }
