@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SwiftyModbusResult Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SwiftyModbusResult" class="dashAnchor"></a>
+    <a title="SwiftyModbusResult Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (96% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        SwiftyModbusResult Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftyModbus.html">SwiftyModbus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftyModbus/ModbusError.html">– ModbusError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftyModbusResult.html">SwiftyModbusResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftyModbusResult/ModbusError.html">– ModbusError</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SwiftyModbusResult</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SwiftyModbusResult</span></code></pre>
+
+                </div>
+              </div>
+            <p>Libmodbus wrapper class with Result</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC0B5ErrorO"></a>
+                    <a name="//apple_ref/swift/Enum/ModbusError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC0B5ErrorO">ModbusError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>libmodbus error</p>
+
+                        <a href="../Classes/SwiftyModbusResult/ModbusError.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ModbusError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC7address4portACSS_s5Int32Vtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(address:port:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC7address4portACSS_s5Int32Vtcfc">init(address:<wbr>port:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a SwiftyModbus class for TCP Protocol</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>address</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>IP address or host name</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>port</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>port number to connect to</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC9debugModeSbvp"></a>
+                    <a name="//apple_ref/swift/Property/debugMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC9debugModeSbvp">debugMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set debug flag of the context. When true, many verbose messages are displayed on stdout and stderr.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">debugMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC8setSlaveyys5Int32VF"></a>
+                    <a name="//apple_ref/swift/Method/setSlave(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC8setSlaveyys5Int32VF">setSlave(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the slave number</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSlave</span><span class="p">(</span><span class="n">_</span> <span class="nv">slave</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>slave</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>slave number (from 1 to 247) or 0xFF (MODBUS_TCP_SLAVE)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC7connects0C0OyytAC0B5ErrorOGyF"></a>
+                    <a name="//apple_ref/swift/Method/connect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC7connects0C0OyytAC0B5ErrorOGyF">connect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Establish a connection to a Modbus server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">connect</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>esult<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC10disconnectyyF"></a>
+                    <a name="//apple_ref/swift/Method/disconnect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC10disconnectyyF">disconnect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Close the connection established</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">disconnect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC9setSocket6socketys5Int32V_tF"></a>
+                    <a name="//apple_ref/swift/Method/setSocket(socket:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC9setSocket6socketys5Int32V_tF">setSocket(socket:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set socket of the modbus context</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setSocket</span><span class="p">(</span><span class="nv">socket</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>socket</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>socket handle</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC9getSockets5Int32VyF"></a>
+                    <a name="//apple_ref/swift/Method/getSocket()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC9getSockets5Int32VyF">getSocket()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get socket of the modbus context</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getSocket</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>socket handle</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC15responseTimeoutSdvp"></a>
+                    <a name="//apple_ref/swift/Property/responseTimeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC15responseTimeoutSdvp">responseTimeout</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get/set the timeout TimeInterval used to wait for a response and connect</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">responseTimeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC11byteTimeoutSdvp"></a>
+                    <a name="//apple_ref/swift/Property/byteTimeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC11byteTimeoutSdvp">byteTimeout</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Get/set the timeout interval between two consecutive bytes of the same message</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">byteTimeout</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC12headerLengths5Int32Vvp"></a>
+                    <a name="//apple_ref/swift/Property/headerLength" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC12headerLengths5Int32Vvp">headerLength</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve the current header length</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">headerLength</span><span class="p">:</span> <span class="kt">Int32</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>header length from the backend</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC5flushs0C0OyytAC0B5ErrorOGyF"></a>
+                    <a name="//apple_ref/swift/Method/flush()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC5flushs0C0OyytAC0B5ErrorOGyF">flush()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flush non-transmitted data and discard data received but not read</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">flush</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC8readBits4addr5counts0C0OySays5UInt8VGAC0B5ErrorOGs5Int32V_APtF"></a>
+                    <a name="//apple_ref/swift/Method/readBits(addr:count:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC8readBits4addr5counts0C0OySays5UInt8VGAC0B5ErrorOGs5Int32V_APtF">readBits(addr:<wbr>count:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read the status of the bits (coils) to the address of the remote device.
+The function uses the Modbus function code 0x01 (read coil status).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">readBits</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">UInt8</span><span class="p">],</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>count of the bits (coils)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result with array of unsigned bytes (8 bits) set to TRUE(1) or FALSE(0).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC13readInputBits4addr5counts0C0OySays5UInt8VGAC0B5ErrorOGs5Int32V_APtF"></a>
+                    <a name="//apple_ref/swift/Method/readInputBits(addr:count:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC13readInputBits4addr5counts0C0OySays5UInt8VGAC0B5ErrorOGs5Int32V_APtF">readInputBits(addr:<wbr>count:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read the status of the input bits to the address of the remote device.
+The function uses the Modbus function code 0x02 (read input status).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">readInputBits</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">UInt8</span><span class="p">],</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>count of the input bits</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result with array of unsigned bytes (8 bits) set to TRUE(1) or FALSE(0).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC12readRegister4addrs0C0Oys6UInt16VAC0B5ErrorOGs5Int32V_tF"></a>
+                    <a name="//apple_ref/swift/Method/readRegister(addr:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC12readRegister4addrs0C0Oys6UInt16VAC0B5ErrorOGs5Int32V_tF">readRegister(addr:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read the content of the one holding register by address of the remote device.
+The function uses the Modbus function code 0x03 (read holding registers).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">readRegister</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">UInt16</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result with register value as UInt16</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC13readRegisters4addr5counts0C0OySays6UInt16VGAC0B5ErrorOGs5Int32V_APtF"></a>
+                    <a name="//apple_ref/swift/Method/readRegisters(addr:count:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC13readRegisters4addr5counts0C0OySays6UInt16VGAC0B5ErrorOGs5Int32V_APtF">readRegisters(addr:<wbr>count:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read the content of the holding registers to the address of the remote device.
+The function uses the Modbus function code 0x03 (read holding registers).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">readRegisters</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">UInt16</span><span class="p">],</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>count of the holding registers</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result with array as unsigned word values (16 bits).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC18readInputRegisters4addr5counts0C0OySays6UInt16VGAC0B5ErrorOGs5Int32V_APtF"></a>
+                    <a name="//apple_ref/swift/Method/readInputRegisters(addr:count:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC18readInputRegisters4addr5counts0C0OySays6UInt16VGAC0B5ErrorOGs5Int32V_APtF">readInputRegisters(addr:<wbr>count:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read the content of the input registers to the address of the remote device.
+The function uses the Modbus function code 0x04 (read input registers).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">readInputRegisters</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">UInt16</span><span class="p">],</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>count</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>count of the input registers</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result with array as unsigned word values (16 bits).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC8writeBit4addr6statuss0C0OyytAC0B5ErrorOGs5Int32V_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/writeBit(addr:status:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC8writeBit4addr6statuss0C0OyytAC0B5ErrorOGs5Int32V_SbtF">writeBit(addr:<wbr>status:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Write the status at the address of the remote device.
+The function uses the Modbus function code 0x05 (force single coil).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">writeBit</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>status</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>boolean status to write</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC9writeBits4addr6statuss0C0OyytAC0B5ErrorOGs5Int32V_Says5UInt8VGtF"></a>
+                    <a name="//apple_ref/swift/Method/writeBits(addr:status:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC9writeBits4addr6statuss0C0OyytAC0B5ErrorOGs5Int32V_Says5UInt8VGtF">writeBits(addr:<wbr>status:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Write the status of the bits (coils) at the address of the remote device.
+The function uses the Modbus function code 0x0F (force multiple coils).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">writeBits</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt8</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>status</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>array of statuses</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC13writeRegister4addr5values0C0OyytAC0B5ErrorOGs5Int32V_s6UInt16VtF"></a>
+                    <a name="//apple_ref/swift/Method/writeRegister(addr:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC13writeRegister4addr5values0C0OyytAC0B5ErrorOGs5Int32V_s6UInt16VtF">writeRegister(addr:<wbr>value:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Write the value to the holding register at the address of the remote device.
+The function uses the Modbus function code 0x06 (preset single register).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">writeRegister</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>value of holding register</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC14writeRegisters4addr4datas0C0OyytAC0B5ErrorOGs5Int32V_Says6UInt16VGtF"></a>
+                    <a name="//apple_ref/swift/Method/writeRegisters(addr:data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC14writeRegisters4addr4datas0C0OyytAC0B5ErrorOGs5Int32V_Says6UInt16VGtF">writeRegisters(addr:<wbr>data:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Write to holding registers at address of the remote device.
+The function uses the Modbus function code 0x10 (preset multiple registers).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">writeRegisters</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt16</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>array of values to be writteb</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC17maskWriteRegister4addr0D3AND0D2ORs0C0OyytAC0B5ErrorOGs5Int32V_s6UInt16VAPtF"></a>
+                    <a name="//apple_ref/swift/Method/maskWriteRegister(addr:maskAND:maskOR:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC17maskWriteRegister4addr0D3AND0D2ORs0C0OyytAC0B5ErrorOGs5Int32V_s6UInt16VAPtF">maskWriteRegister(addr:<wbr>maskAND:<wbr>maskOR:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Modify the value of the holding register at the remote device using the algorithm:
+ new value = (current value AND &lsquo;and&rsquo;) OR (&lsquo;or&rsquo; AND (NOT &lsquo;and&rsquo;))
+The function uses the Modbus function code 0x16 (mask single register).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">maskWriteRegister</span><span class="p">(</span><span class="nv">addr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">maskAND</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">maskOR</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>addr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maskAND</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>and mask</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>maskOR</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>or mask</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC21writeAndReadRegisters0D4Addr4data04readH00J5Counts0C0OySays6UInt16VGAC0B5ErrorOGs5Int32V_Am2RtF"></a>
+                    <a name="//apple_ref/swift/Method/writeAndReadRegisters(writeAddr:data:readAddr:readCount:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC21writeAndReadRegisters0D4Addr4data04readH00J5Counts0C0OySays6UInt16VGAC0B5ErrorOGs5Int32V_Am2RtF">writeAndReadRegisters(writeAddr:<wbr>data:<wbr>readAddr:<wbr>readCount:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Write and read number of registers in a single transaction</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">writeAndReadRegisters</span><span class="p">(</span><span class="nv">writeAddr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt16</span><span class="p">],</span> <span class="nv">readAddr</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">readCount</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">UInt16</span><span class="p">],</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>writeAddr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device to write</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>data array to write</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>readAddr</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>address of the remote device to read</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>readCount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>count of read data</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Result with array as unsigned word values (16 bits).</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-10-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
