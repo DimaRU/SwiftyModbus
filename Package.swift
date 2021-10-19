@@ -5,17 +5,17 @@ import PackageDescription
 let package = Package(
     name: "SwiftyModbus",
     products: [
-        .library(
-            name: "SwiftyModbus",
-            targets: ["SwiftyModbus"]),
+        .library(name: "SwiftyModbusPromise", targets: ["SwiftyModbusPromise"]),
+        .library(name: "SwiftyModbus", targets: ["SwiftyModbus"]),
     ],
     dependencies: [
         .package(url: "https://github.com/mxcl/PromiseKit.git", .upToNextMajor(from: "6.15.2"))
     ],
     targets: [
+        .target(name: "SwiftyModbusPromise",
+                dependencies: ["CModbus", "PromiseKit"]),
         .target(name: "SwiftyModbus",
-                dependencies: ["CModbus", "PromiseKit"],
-                path: "Sources/SwiftyModbus"),
+                dependencies: ["CModbus"]),
         .systemLibrary(name: "CModbus",
                        path: "Sources/Libmodbus",
                        pkgConfig: "libmodbus",
