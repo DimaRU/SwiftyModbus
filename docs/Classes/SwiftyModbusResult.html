@@ -17,7 +17,7 @@
     <a title="SwiftyModbusResult Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (92% documented)</p>
+        <p><a href="../index.html"> Docs</a> (84% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -45,10 +45,16 @@
                 <a href="../Classes/SwiftyModbus/ModbusError.html">– ModbusError</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/SwiftyModbus/ErrorRecoveryMode.html">– ErrorRecoveryMode</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/SwiftyModbusResult.html">SwiftyModbusResult</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SwiftyModbusResult/ModbusError.html">– ModbusError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SwiftyModbusResult/ErrorRecoveryMode.html">– ErrorRecoveryMode</a>
               </li>
             </ul>
           </li>
@@ -102,9 +108,37 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12SwiftyModbus0aB6ResultC7address4portACSS_s5Int32Vtcfc"></a>
+                    <a name="/s:12SwiftyModbus0aB6ResultC17ErrorRecoveryModeV"></a>
+                    <a name="//apple_ref/swift/Struct/ErrorRecoveryMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC17ErrorRecoveryModeV">ErrorRecoveryMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Error recovery options for setErrorRecovery function</p>
+
+                        <a href="../Classes/SwiftyModbusResult/ErrorRecoveryMode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ErrorRecoveryMode</span> <span class="p">:</span> <span class="kt">OptionSet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC7address4portACSS_Sitcfc"></a>
                     <a name="//apple_ref/swift/Method/init(address:port:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC7address4portACSS_s5Int32Vtcfc">init(address:<wbr>port:<wbr>)</a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC7address4portACSS_Sitcfc">init(address:<wbr>port:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -119,7 +153,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">port</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -477,6 +511,52 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>Result<Void, ModbusError></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12SwiftyModbus0aB6ResultC16setErrorRecovery4modes0C0OyytAC0bE0VGAC0eF4ModeV_tF"></a>
+                    <a name="//apple_ref/swift/Method/setErrorRecovery(mode:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12SwiftyModbus0aB6ResultC16setErrorRecovery4modes0C0OyytAC0bE0VGAC0eF4ModeV_tF">setErrorRecovery(mode:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the error recovery mode to apply when the connection fails or the byte received is not expected.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setErrorRecovery</span><span class="p">(</span><span class="nv">mode</span><span class="p">:</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ErrorRecoveryMode.html">ErrorRecoveryMode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="../Classes/SwiftyModbusResult/ModbusError.html">ModbusError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mode</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ErrorRecoveryMode optionSet</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -1204,7 +1284,7 @@ The function uses the Modbus function code 0x17 (write/read registers).</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-10-23)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-10-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
