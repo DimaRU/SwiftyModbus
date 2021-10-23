@@ -5,6 +5,15 @@ Support both macOS and Linux.
 
 ## How To Get Started
 
+- Install libmodbus library
+```bash
+brew install libmodbus
+```
+or
+```bash
+apt install libmodbus-dev
+```
+
 - Add   
 `.package(url: "https://github.com/DimaRU/SwiftyModbus.git", .upToNextMajor(from: "2.1.0"))` 
  to your dependencies.
