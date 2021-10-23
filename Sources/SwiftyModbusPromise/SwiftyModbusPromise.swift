@@ -14,10 +14,11 @@ fileprivate let errorValue: Int32 = -1
 /// Libmodbus wrapper class with Promises
 public class SwiftyModbusPromise {
     /// libmodbus error
-    public enum ModbusError: Error {
-        case error(message: String, errno: Int32)
+    public struct ModbusError: Error {
+        public let message: String
+        public let errno: Int32
     }
-    
+
     /// DispatchQueue for modbus acync opetations
     public var modbusQueue = DispatchQueue(label: "in.ioshack.modbusQueue")
     
@@ -363,6 +364,7 @@ public class SwiftyModbusPromise {
     }
     
     /// Write and read number of registers in a single transaction
+    /// The function uses the Modbus function code 0x17 (write/read registers).
     /// - Parameters:
     ///   - writeAddr: address of the remote device to write
     ///   - data: data array to write
@@ -388,7 +390,7 @@ public class SwiftyModbusPromise {
 
     private func modbusError(errno: Int32) -> ModbusError {
         let errorString = String(utf8String: modbus_strerror(errno)) ?? ""
-        return .error(message: errorString, errno: errno)
+        return .init(message: errorString, errno: errno)
     }
 
     private func toTimerInterval(sec: UInt32, usec: UInt32) -> TimeInterval {
