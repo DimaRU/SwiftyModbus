@@ -19,9 +19,19 @@ public class SwiftyModbusPromise {
         public let errno: Int32
     }
 
+    /// Error recovery options for setErrorRecovery function
+    public struct ErrorRecoveryMode: OptionSet {
+        public let rawValue: UInt32
+        public init(rawValue: UInt32) {
+            self.rawValue = rawValue
+        }
+        public static let recoveryNone     = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_NONE.rawValue)
+        public static let recoveryLink     = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_LINK.rawValue)
+        public static let recoveryProtocol = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_PROTOCOL.rawValue)
+    }
+
     /// DispatchQueue for modbus acync opetations
     public var modbusQueue = DispatchQueue(label: "in.ioshack.modbusQueue")
-    
     private var modbus: OpaquePointer
 
     
@@ -29,7 +39,7 @@ public class SwiftyModbusPromise {
     /// - Parameters:
     ///   - address: IP address or host name
     ///   - port: port number to connect to
-    public init(address: String, port: Int32) {
+    public init(address: String, port: Int) {
         modbus = modbus_new_tcp_pi(address, String(port))
     }
     
@@ -58,7 +68,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_connect(self.modbus) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -135,7 +145,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_flush(self.modbus) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -144,6 +154,23 @@ public class SwiftyModbusPromise {
         return promise
     }
     
+    /// Set the error recovery mode to apply when the connection fails or the byte received is not expected.
+    /// - Parameter mode: ErrorRecoveryMode optionSet
+    public func setErrorRecovery(mode: ErrorRecoveryMode) -> Promise<Void> {
+        let (promise, seal) = Promise<Void>.pending()
+        modbusQueue.async {
+            guard
+                modbus_set_error_recovery(self.modbus, modbus_error_recovery_mode(rawValue: mode.rawValue)) != errorValue
+            else {
+                let error = self.modbusError()
+                seal.reject(error)
+                return
+            }
+            seal.fulfill(())
+        }
+        return promise
+    }
+
     /// Read the status of the bits (coils) to the address of the remote device.
     /// The function uses the Modbus function code 0x01 (read coil status).
     /// - Parameters:
@@ -157,7 +184,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_read_bits(self.modbus, addr, count, &rezult) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -179,7 +206,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_read_input_bits(self.modbus, addr, count, &rezult) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -200,7 +227,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_read_registers(self.modbus, addr, 1, &rezult) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -222,7 +249,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_read_registers(self.modbus, addr, count, &rezult) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -244,7 +271,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_read_input_registers(self.modbus, addr, count, &rezult) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -265,7 +292,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_write_bit(self.modbus, addr, status ? 1:0) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -287,7 +314,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_write_bits(self.modbus, addr, Int32(statusLocal.count), &statusLocal) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -308,7 +335,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_write_register(self.modbus, addr, value) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -330,7 +357,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_write_registers(self.modbus, addr, Int32(dataLocal.count), &dataLocal) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -354,7 +381,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_mask_write_register(self.modbus, addr, maskAND, maskOR) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -379,7 +406,7 @@ public class SwiftyModbusPromise {
             guard
                 modbus_write_and_read_registers(self.modbus, writeAddr, Int32(data.count), &localData, readAddr, readCount, &rezult) != errorValue
             else {
-                let error = self.modbusError(errno: errno)
+                let error = self.modbusError()
                 seal.reject(error)
                 return
             }
@@ -388,7 +415,7 @@ public class SwiftyModbusPromise {
         return promise
     }
 
-    private func modbusError(errno: Int32) -> ModbusError {
+    private func modbusError() -> ModbusError {
         let errorString = String(utf8String: modbus_strerror(errno)) ?? ""
         return .init(message: errorString, errno: errno)
     }

@@ -18,13 +18,24 @@ public class SwiftyModbusResult {
         public let errno: Int32
     }
 
+    /// Error recovery options for setErrorRecovery function
+    public struct ErrorRecoveryMode: OptionSet {
+        public let rawValue: UInt32
+        public init(rawValue: UInt32) {
+            self.rawValue = rawValue
+        }
+        public static let recoveryNone     = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_NONE.rawValue)
+        public static let recoveryLink     = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_LINK.rawValue)
+        public static let recoveryProtocol = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_PROTOCOL.rawValue)
+    }
+
     private var modbus: OpaquePointer
 
     /// Create a SwiftyModbus class for TCP Protocol
     /// - Parameters:
     ///   - address: IP address or host name
     ///   - port: port number to connect to
-    public init(address: String, port: Int32) {
+    public init(address: String, port: Int) {
         modbus = modbus_new_tcp_pi(address, String(port))
     }
     
@@ -49,7 +60,7 @@ public class SwiftyModbusResult {
     /// - Returns: esult<Void, ModbusError>
     public func connect() -> Result<Void, ModbusError> {
         guard modbus_connect(modbus) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
@@ -111,11 +122,20 @@ public class SwiftyModbusResult {
     /// - Returns: Result<Void, ModbusError>
     public func flush() -> Result<Void, ModbusError> {
         guard modbus_flush(self.modbus) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
     
+    /// Set the error recovery mode to apply when the connection fails or the byte received is not expected.
+    /// - Parameter mode: ErrorRecoveryMode optionSet
+    public func setErrorRecovery(mode: ErrorRecoveryMode) -> Result<Void, ModbusError> {
+        if modbus_set_error_recovery(self.modbus, modbus_error_recovery_mode(rawValue: mode.rawValue)) == errorValue {
+            return .failure(modbusError())
+        }
+        return .success(())
+    }
+
     /// Read the status of the bits (coils) to the address of the remote device.
     /// The function uses the Modbus function code 0x01 (read coil status).
     /// - Parameters:
@@ -125,7 +145,7 @@ public class SwiftyModbusResult {
     public func readBits(addr: Int32, count: Int32) -> Result<[UInt8], ModbusError> {
         var reply: [UInt8] = .init(repeating: 0, count: Int(count))
         guard modbus_read_bits(self.modbus, addr, count, &reply) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(reply)
     }
@@ -139,7 +159,7 @@ public class SwiftyModbusResult {
     public func readInputBits(addr: Int32, count: Int32) -> Result<[UInt8], ModbusError> {
         var reply: [UInt8] = .init(repeating: 0, count: Int(count))
         guard modbus_read_input_bits(self.modbus, addr, count, &reply) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(reply)
     }
@@ -152,7 +172,7 @@ public class SwiftyModbusResult {
     public func readRegister(addr: Int32) -> Result<UInt16, ModbusError> {
         var reply: UInt16 = 0
         guard modbus_read_registers(self.modbus, addr, 1, &reply) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(reply)
     }
@@ -166,7 +186,7 @@ public class SwiftyModbusResult {
     public func readRegisters(addr: Int32, count: Int32) -> Result<[UInt16], ModbusError> {
         var reply: [UInt16] = .init(repeating: 0, count: Int(count))
         guard modbus_read_registers(self.modbus, addr, count, &reply) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(reply)
     }
@@ -180,7 +200,7 @@ public class SwiftyModbusResult {
     public func readInputRegisters(addr: Int32, count: Int32) -> Result<[UInt16], ModbusError> {
         var reply: [UInt16] = .init(repeating: 0, count: Int(count))
         guard modbus_read_input_registers(self.modbus, addr, count, &reply) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(reply)
     }
@@ -193,7 +213,7 @@ public class SwiftyModbusResult {
     /// - Returns: Result<Void, ModbusError>
     public func writeBit(addr: Int32, status: Bool) -> Result<Void, ModbusError> {
         guard modbus_write_bit(self.modbus, addr, status ? 1:0) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
@@ -207,7 +227,7 @@ public class SwiftyModbusResult {
     public func writeBits(addr: Int32, status: [UInt8]) -> Result<Void, ModbusError> {
         var statusLocal = status
         guard modbus_write_bits(self.modbus, addr, Int32(statusLocal.count), &statusLocal) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
@@ -220,7 +240,7 @@ public class SwiftyModbusResult {
     /// - Returns: Result<Void, ModbusError>
     public func writeRegister(addr: Int32, value: UInt16) -> Result<Void, ModbusError> {
         guard modbus_write_register(self.modbus, addr, value) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
@@ -234,7 +254,7 @@ public class SwiftyModbusResult {
     public func writeRegisters(addr: Int32, data: [UInt16]) -> Result<Void, ModbusError> {
         var dataLocal = data
         guard modbus_write_registers(self.modbus, addr, Int32(dataLocal.count), &dataLocal) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
@@ -249,7 +269,7 @@ public class SwiftyModbusResult {
     /// - Returns: Result<Void, ModbusError>
     public func maskWriteRegister(addr: Int32, maskAND: UInt16, maskOR: UInt16) -> Result<Void, ModbusError> {
         guard modbus_mask_write_register(self.modbus, addr, maskAND, maskOR) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(())
     }
@@ -266,12 +286,12 @@ public class SwiftyModbusResult {
         var reply: [UInt16] = .init(repeating: 0, count: Int(readCount))
         var localData = data
         guard modbus_write_and_read_registers(self.modbus, writeAddr, Int32(data.count), &localData, readAddr, readCount, &reply) != errorValue else {
-            return .failure(modbusError(errno: errno))
+            return .failure(modbusError())
         }
         return .success(reply)
     }
 
-    private func modbusError(errno: Int32) -> ModbusError {
+    private func modbusError() -> ModbusError {
         let errorString = String(utf8String: modbus_strerror(errno)) ?? ""
         return .init(message: errorString, errno: errno)
     }
