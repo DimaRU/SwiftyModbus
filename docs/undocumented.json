@@ -3,15 +3,29 @@
     {
       "file": "/Users/dmitry/Developer/Superjob/SwiftyModbus/Sources/SwiftyModbus/SwiftyModbus.swift",
       "line": 17,
-      "symbol": "SwiftyModbus.ModbusError.error(message:errno:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "SwiftyModbus.ModbusError.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitry/Developer/Superjob/SwiftyModbus/Sources/SwiftyModbus/SwiftyModbus.swift",
+      "line": 18,
+      "symbol": "SwiftyModbus.ModbusError.errno",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/dmitry/Developer/Superjob/SwiftyModbus/Sources/SwiftyModbus/SwiftyModbusResult.swift",
       "line": 17,
-      "symbol": "SwiftyModbusResult.ModbusError.error(message:errno:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "symbol": "SwiftyModbusResult.ModbusError.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/dmitry/Developer/Superjob/SwiftyModbus/Sources/SwiftyModbus/SwiftyModbusResult.swift",
+      "line": 18,
+      "symbol": "SwiftyModbusResult.ModbusError.errno",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
