@@ -4,11 +4,6 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftyModbus",
-    providers: [
-        .brew(["libmodbus"]),
-        .apt(["libmodbus-dev"]),
-        .yum(["libmodbus-dev"]),
-    ],
     products: [
         .library(name: "SwiftyModbusPromise", targets: ["SwiftyModbusPromise"]),
         .library(name: "SwiftyModbus", targets: ["SwiftyModbus"]),
@@ -27,6 +22,7 @@ let package = Package(
                        providers: [
                         .apt(["libmodbus-dev"]),
                         .brew(["libmodbus"]),
+                        .yum(["libmodbus-dev"]),
                        ]),
         .testTarget(
             name: "SwiftyModbusTests",
