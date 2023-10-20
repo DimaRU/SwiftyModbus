@@ -17,7 +17,7 @@ public class SwiftyModbus {
         public let message: String
         public let errno: Int32
     }
-
+    
     /// Error recovery options for setErrorRecovery function
     public struct ErrorRecoveryMode: OptionSet {
         public let rawValue: UInt32
@@ -28,15 +28,32 @@ public class SwiftyModbus {
         public static let recoveryLink     = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_LINK.rawValue)
         public static let recoveryProtocol = ErrorRecoveryMode(rawValue: MODBUS_ERROR_RECOVERY_PROTOCOL.rawValue)
     }
-
+    
     private var modbus: OpaquePointer
-
+    
     /// Create a SwiftyModbus class for TCP Protocol
     /// - Parameters:
     ///   - address: IP address or host name
     ///   - port: port number to connect to
     public init(address: String, port: Int) {
         modbus = modbus_new_tcp_pi(address, String(port))
+    }
+    
+    /// Create a SwiftyModbus instance for Modbus RTU Connections
+    /// - Parameters:
+    ///   - device: The serial device (for example `/dev/ttyUSB0`)
+    ///   - baudRate: The baud rate of the serial connection
+    ///   - parity: Parity
+    ///   - byteSize: Argument specifies the number of bits of data, the allowed values are 5, 6, 7 and 8.
+    ///   - stopBits: Argument specifies the bits of stop, the allowed values are 1 and 2.
+    public init(
+        device: String,
+        baudRate: Int32,
+        parity: Parity,
+        byteSize: ByteSize,
+        stopBits: StopBits
+    ) {
+        modbus = modbus_new_rtu(device, baudRate, parity.rawValue.byteArray.first!, byteSize.rawValue, stopBits.rawValue)
     }
     
     deinit {
@@ -291,5 +308,29 @@ public class SwiftyModbus {
         let sec = UInt32(whole)
         let usec = UInt32(fraction * 1_000_000)
         return (sec, usec)
+    }
+}
+
+extension SwiftyModbus
+{
+    public enum Parity: String
+    {
+        case none = "N"
+        case even = "E"
+        case odd = "O"
+    }
+    
+    public enum ByteSize: Int32
+    {
+        case five = 5
+        case six = 6
+        case seven = 7
+        case eight = 8
+    }
+    
+    public enum StopBits: Int32
+    {
+        case one = 1
+        case two = 2
     }
 }
