@@ -1,7 +1,7 @@
 # SwiftyModbus
 
-This is a Swift wrapper class for the [*libmodbus library*](http://libmodbus.org). Now support only TCP modbus connection.
-Support both macOS and Linux.
+This is a Swift wrapper class for the [*libmodbus library*](http://libmodbus.org) with support for TCP and RTU connections.
+Supports both macOS and Linux.
 
 ## How To Get Started
 
@@ -106,6 +106,44 @@ func modbusIO() {
     }
 }
 ```
+
+### RTU
+``` swift
+import Foundation
+import SwiftyModbus
+
+let modbusQueue = DispatchQueue(label: "queue.modbus")
+
+modbusQueue.async {
+    modbusIO()
+}
+RunLoop.main.run()
+
+func modbusIO() {
+    let modbus = SwiftyModbus(device: "/dev/ttyUSB0", baudRate: 9600, parity: .even, byteSize: .eight, stopBits: .one)
+    modbus.responseTimeout = 1.5      // Set response timeout for 1.5 sec
+    print("Modbus responce timeout:", modbus.responseTimeout)
+
+    do {
+        try modbus.connect()
+        let registers = try modbus.readRegisters(addr: 102, count: 10)
+        print(registers)
+        try modbus.writeRegisters(addr: 102, data: [1,2,3,4,5,6,7,8,9,10])
+        let inputRegisters = try modbus.readInputRegisters(addr: 102, count: 10)
+        print(inputRegisters)
+        try modbus.writeBits(addr: 104, status: [0,1,0,1])
+        let bits = try modbus.readBits(addr: 104, count: 4)
+        print(bits)
+        modbus.disconnect()
+        exit(0)
+    } catch {
+        print(error)
+        exit(1)
+    }
+}
+```
+
+
 
 You may test this example with [diagslave](https://www.modbusdriver.com/diagslave.html)
 
